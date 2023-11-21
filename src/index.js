@@ -36,6 +36,7 @@ async function handlerGetBreeds(e) {
     createMarkup(catInfo);
   } catch (err) {
     iziToast.error(error)
+    refs.div.innerHTML = '';
   } finally {
     changeVisible(refs.loader);
     changeVisible(refs.div);
@@ -84,7 +85,7 @@ async function startInit() {
 
     refs.select.addEventListener('change', handlerGetBreeds);
   } catch (err) {
-    iziToast.error(error)
+    iziToast.error(error);
   } finally {
     changeVisible(refs.loader);
     changeVisible(refs.select);
